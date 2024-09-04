@@ -15,18 +15,18 @@ char data[40];
 int main(void)
 {
     int temperatura = 0, umidade = 0;
-    char teste[] = "Iniciando Comunicacao";
+    char fraseinicial[] = "Iniciando Comunicacao";
     char tp[] = "temperatura:";
     char um[] = "umidade:";
     char valor[5];
     char quebra[] = "\n";
     UART_config();
-    UART_enviaString(teste);
+    UART_enviaString(fraseinicial);
     UART_enviaString(quebra);
     
-    void startdht11();
-    void dht11();
-    void ConvertData(char *info, int*temp, int *umidity);
+    void startdht11(); // Função que inicia o pulso inicial para comunicação com o sensor conforme datasheet
+    void dht11(); // Função responsável por receber os dados enviados pelo sensor
+    void ConvertData(char *info, int*temp, int *umidity); // Função responsável por converter os bits para a base decimal
     configuracao();
     PORTB = 0b00000100;
     
@@ -50,11 +50,6 @@ int main(void)
     }
         
 }
-//******************************************************************************
-/*
-void init_lcd2L(void);
-void clear_lcd2L(void);
-*/
 
 void startdht11()
 {
@@ -84,7 +79,7 @@ void dht11()
         while(!(PINB & (1 << 2))); // while esperando o delay de 50us entre cada bit enviado
         TCCR0B = 0b00000011; // definindo o prescaler do timer
         TCNT0 = 0;
-        while((PINB & (1 << 2))); // espera at� que o DHT11 envie 0 novamente enquanto o timer conta
+        while((PINB & (1 << 2))); // espera até que o DHT11 envie 0 novamente enquanto o timer conta
         
         if(TCNT0 <= 8)
         {
