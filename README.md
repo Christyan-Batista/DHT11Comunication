@@ -32,5 +32,3 @@ Quando o MCU envia um sinal de início, o DHT11 muda do modo de baixo consumo de
 ![image](https://github.com/user-attachments/assets/d9e6697f-541a-422e-b5ac-d43e1612f787)
 
 As demais informações sobre a comunicação com o DHT11 pode ser encontrada em seu datasheet: https://www.mouser.com/datasheet/2/758/DHT11-Technical-Data-Sheet-Translated-Version-1143054.pdf
-
-# Lógica do programa elaborado.
