@@ -7,6 +7,8 @@
 *
  ******************************************************************************/
 
+// Biblioteca auxiliar para inicializar as portas do microcontrolador
+
 #include <avr/io.h>
 
  void configuracao(void)
