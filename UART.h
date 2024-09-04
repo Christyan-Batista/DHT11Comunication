@@ -1,13 +1,15 @@
 /*
- *BIBLIOTECA PARA UTILIZA«√O DA UART
+ *BIBLIOTECA PARA UTILIZA√á√ÉO DA UART
  * Modificada por: PROF. RODRIGO RECH
  * DATA: 09/2019
- *CONFIGURA«√O: BAUD RATE   -   9600
+ *CONFIGURA√á√ÉO: BAUD RATE   -   9600
  *              NBITS       -   8
  *              STOP BITS   -   1 
  */
 
-#include <avr/io.h> 	    //definiÁıes do componente especificado
+// Biblioteca auxiliar utilizada para utilizar comunica√ß√£o serial do microcontrolador para realizar os testes de comunica√ß√£o.
+
+#include <avr/io.h> 	    //defini√ß√µes do componente especificado
 #include <avr/interrupt.h>
 
 void UART_config() 
@@ -15,7 +17,7 @@ void UART_config()
 	//Baud Rate de 9600bps para um cristal de 16MHz (Datasheet)
     UBRR0 = 103;    
    
-    //Habilita a interrupÁ„o de recepÁ„o e os pinos TX e RX
+    //Habilita a interrup√ß√£o de recep√ß√£o e os pinos TX e RX
     UCSR0B =  (1<<RXEN0) | (1<<TXEN0) | (1<<RXCIE0) ;
 	
 	//Configura a UART com 8 bits de dados
