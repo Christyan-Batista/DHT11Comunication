@@ -1,6 +1,5 @@
 /******************************************************************************* 
 * File:   config.c  
-* Developed by Nivaldo T. Schiefler Jr.  DSc.
 * Build under XC8 compiler
 * Created on 1 de Janeiro de 2021, 13:57
 * Updates: 
